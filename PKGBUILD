@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=plasma-thunderbolt-git
-pkgver=_r156.g579cef8
+pkgver=5.22.90_r156.g579cef8
 pkgrel=1
 pkgdesc='Plasma integration for controlling Thunderbolt devices'
 arch=(x86_64)
@@ -16,7 +16,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd ${pkgname%-git}
-  _ver="$(grep -m1 'set(PROJECT_VERSION' CMakeLists.txt | cut -d '"' -f2 | tr - .)"
+  _ver="$(git describe | sed 's/^v//;s/-.*//')"
   echo "${_ver}_r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
