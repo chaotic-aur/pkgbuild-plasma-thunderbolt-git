@@ -9,6 +9,7 @@ arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
 license=(LGPL)
 depends=(bolt systemsettings-git)
+makedepends=(cmake git extra-cmake-modules-git)
 groups=(plasma-git)
 source=("git+https://invent.kde.org/plasma/${pkgname%-git}.git")
 sha256sums=('SKIP')
